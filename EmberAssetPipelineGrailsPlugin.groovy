@@ -7,7 +7,7 @@ class EmberAssetPipelineGrailsPlugin {
     def title = "Ember.js Asset-Pipeline Plugin"
     def author = "David Estes"
     def authorEmail = "destes@bcap.com"
-    def description = "Provides  Ember.js integration with asset-pipeline. Allows for handlebars precompilation as well as scaffolding for building an emberjs application."
+    def description = "Provides Ember.js integration with asset-pipeline. Allows for handlebars precompilation as well as scaffolding for building an emberjs application."
     def documentation = "http://github.com/bertramdev/ember-grails-asset-pipeline"
 
     def license = "APACHE"
