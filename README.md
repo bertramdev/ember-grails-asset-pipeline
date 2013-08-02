@@ -11,6 +11,7 @@ For more information on how to use asset-pipeline, visit [here](http://www.githu
 plugins {
 	compile ":ember-asset-pipeline:1.0.0-RC6.1"
 }
+```
 
 2. Next, generate the application structure:
 ```shell
