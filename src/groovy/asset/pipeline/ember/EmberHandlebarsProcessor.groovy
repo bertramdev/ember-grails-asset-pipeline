@@ -64,24 +64,46 @@ class EmberHandlebarsProcessor {
     def grailsApplication  = ApplicationHolder.getApplication()
     def templateRoot       = grailsApplication.config.grails.assets.handlebars.templateRoot ?: 'templates'
     def templateSeperator  = grailsApplication.config.grails.assets.handlebars.templatePathSeperator ?: '/'
-    def relativePath       = relativePath(assetFile.file, templateRoot, templateSeperator)
-    def templateName           = AssetHelper.nameWithoutExtension(assetFile.file.getName())
-    if(relativePath) {
-      templateName = [relativePath,templateName].join(templateSeperator)
+    def relativePath       = relativePathFromAssetPath(assetFile.file, true)
+
+
+    def templateName = relativePath
+    if(templateName.startsWith("${templateRoot}${AssetHelper.DIRECTIVE_FILE_SEPARATOR}")) {
+      templateName = templateName.replace("${templateRoot}${AssetHelper.DIRECTIVE_FILE_SEPARATOR}","")
     }
+
+
+    templateName.replaceAll(AssetHelper.DIRECTIVE_FILE_SEPARATOR, templateSeperator)
+    templateName = AssetHelper.nameWithoutExtension(templateName)
+
     return templateName
   }
 
-  def relativePath(file, templateRoot, templateSeperator) {
-    def path          = file.getParent().split(AssetHelper.QUOTED_FILE_SEPARATOR)
-    def startPosition = path.findLastIndexOf{ it == templateRoot }
 
-    if(startPosition+1 >= path.length) {
-      return ""
+  def relativePathFromAssetPath(file, includeFileName=false) {
+    def path
+    if(includeFileName) {
+      path = file.class.name == 'java.io.File' ? file.getCanonicalPath().split(AssetHelper.QUOTED_FILE_SEPARATOR) : file.file.getCanonicalPath().split(AssetHelper.QUOTED_FILE_SEPARATOR)
+    } else {
+      path = file.getParent().split(AssetHelper.QUOTED_FILE_SEPARATOR)
     }
 
-    path = path[(startPosition+1)..-1]
-    return path.join(templateSeperator)
+    def startPosition = path.findLastIndexOf{ it == "grails-app" }
+    if(startPosition == -1) {
+      startPosition = path.findLastIndexOf{ it == 'web-app' }
+      if(startPosition+2 >= path.length) {
+        return ""
+      }
+      path = path[(startPosition+2)..-1]
+    }
+    else {
+      if(startPosition+3 >= path.length) {
+        return ""
+      }
+      path = path[(startPosition+3)..-1]
+    }
+
+    return path.join(AssetHelper.DIRECTIVE_FILE_SEPARATOR)
   }
 
   def wrapTemplate = { String templateName, String compiledTemplate ->

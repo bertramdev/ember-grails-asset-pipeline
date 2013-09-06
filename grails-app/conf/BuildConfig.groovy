@@ -13,6 +13,7 @@ grails.project.dependency.resolution = {
 
 	plugins {
 
+
 		runtime ":asset-pipeline:0.7.0"
 		compile ":handlebars-asset-pipeline:1.0.0-RC4.4"
 
