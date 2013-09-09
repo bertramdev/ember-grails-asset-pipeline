@@ -11,9 +11,10 @@ class EmberHandlebarsProcessor {
 
   Scriptable globalScope
   ClassLoader classLoader
-
-  EmberHandlebarsProcessor(){
+  def precompilerMode
+  EmberHandlebarsProcessor(precompiler=false){
     try {
+      this.precompilerMode = precompiler
       classLoader = getClass().getClassLoader()
 
       def handlebarsJsResource = new ClassPathResource('asset/pipeline/handlebars/handlebars.js', classLoader)
