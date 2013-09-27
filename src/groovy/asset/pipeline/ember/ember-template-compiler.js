@@ -1,3 +1,4 @@
+var exports = exports || {};
 (function() {
 var Ember = { assert: function() {} };
 // Version: v1.0.0
