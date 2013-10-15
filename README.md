@@ -28,7 +28,7 @@ grails ember-bootstrap
 ## For CoffeeScript support
 1. Add coffee-asset-pipeline to the BuildConfig
 ```groovy
-	compile ":coffee-asset-pipeline:0.1"
+	runtime ":coffee-asset-pipeline:0.8.0"
 ```
 
 2. Run the bootstrap generator in step 4 with an extra flag instead:
