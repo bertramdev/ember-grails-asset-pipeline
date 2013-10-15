@@ -9,7 +9,7 @@ For more information on how to use asset-pipeline, visit [here](http://www.githu
 
 ```groovy
 plugins {
-	compile ":ember-asset-pipeline:1.0.0-RC6.1"
+	runtime ":ember-asset-pipeline:1.0.0.2"
 }
 ```
 
