@@ -1,1 +1,1 @@
-//=require ember-1.0.0.js
+//=require ember-1.1.2.js
