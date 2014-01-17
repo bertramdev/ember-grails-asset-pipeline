@@ -3,7 +3,7 @@ import asset.pipeline.handlebars.HandlebarsAssetFile
 import asset.pipeline.ember.EmberHandlebarsProcessor
 class EmberAssetPipelineGrailsPlugin {
 
-    def version = "1.2.0.1"
+    def version = "1.2.0.2"
     def grailsVersion = "2.0 > *"
     def title = "Ember.js Asset-Pipeline Plugin"
     def author = "David Estes"
