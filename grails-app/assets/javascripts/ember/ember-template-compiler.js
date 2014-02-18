@@ -1,5 +1,3 @@
-var exports = exports || {};
-
 (function() {
 var Ember = { assert: function() {}, FEATURES: { isEnabled: function() {} } };
 /*!

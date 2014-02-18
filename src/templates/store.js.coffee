@@ -1,6 +1,11 @@
-# http://emberjs.com/guides/models/defining-a-store/
+# http://emberjs.com/guides/models/#toc_store
+# http://emberjs.com/guides/models/pushing-records-into-the-store/
 
-<%= application_name.camelize %>.Store = DS.Store.extend
-  revision: 11
-  adapter: DS.RESTAdapter.create()
+<%= application_name.camelize %>.Store = DS.Store.extend({
 
+})
+
+
+<%= application_name.camelize %>.ApplicationAdapter = DS.RESTAdapter.extend({
+
+})

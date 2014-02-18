@@ -1,4 +1,3 @@
-#= require jquery
 #= require handlebars
 #= require ember
 #= require ember-data
@@ -7,4 +6,3 @@
 
 # for more details see: http://emberjs.com/guides/application/
 window.<%= application_name.camelize %> = Ember.Application.create()
-
