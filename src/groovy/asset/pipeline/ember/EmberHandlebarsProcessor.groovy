@@ -4,7 +4,8 @@ import asset.pipeline.AssetHelper
 import org.mozilla.javascript.Context
 import org.mozilla.javascript.Scriptable
 import org.springframework.core.io.ClassPathResource
-import org.codehaus.groovy.grails.commons.ApplicationHolder
+// import org.codehaus.groovy.grails.commons.ApplicationHolder
+import grails.util.Holders
 // CoffeeScript engine uses Mozilla Rhino to compile the CoffeeScript template
 // using existing javascript in-browser compiler
 class EmberHandlebarsProcessor {
@@ -62,7 +63,7 @@ class EmberHandlebarsProcessor {
   }
 
   def templateNameForFile(assetFile) {
-    def grailsApplication  = ApplicationHolder.getApplication()
+    def grailsApplication  = Holders.grailsApplication
     def templateRoot       = grailsApplication.config.grails.assets.handlebars.templateRoot ?: 'templates'
     def templateSeperator  = grailsApplication.config.grails.assets.handlebars.templatePathSeperator ?: '/'
     def relativePath       = relativePathFromAssetPath(assetFile.file, true)

@@ -15,7 +15,7 @@ grails.project.dependency.resolution = {
 
 
 		runtime ":asset-pipeline:1.6.1"
-		runtime ":handlebars-asset-pipeline:1.3.0.1"
+		runtime ":handlebars-asset-pipeline:1.3.0.2"
 
 		build ':release:2.2.1', ':rest-client-builder:1.0.3', {
 			export = false
