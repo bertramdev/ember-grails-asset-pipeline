@@ -2,9 +2,9 @@
   "name": "ember-grails-asset-pipeline",
   "directory": "grails-app/assets/javascripts",
   "dependencies": {
-    "ember": "~1.4.0",
-    "ember-data": "~1.0.0-beta.4"
-  }
+    "ember": "~1.7.0",
+    "ember-data": "~1.0.0-beta.9"
+  },
   "resolutions": {
     "jquery": "no, thanks"
   }
