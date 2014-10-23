@@ -4,3 +4,6 @@ plugin.xml
 *.log
 *.zip
 /web-app
+
+.idea
+*.iml
