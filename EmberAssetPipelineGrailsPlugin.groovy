@@ -3,8 +3,8 @@ import asset.pipeline.handlebars.HandlebarsAssetFile
 import asset.pipeline.ember.EmberHandlebarsProcessor
 class EmberAssetPipelineGrailsPlugin {
 
-    def version = "1.7.0"
-    def grailsVersion = "2.0 > *"
+    def version = "1.7.0.2"
+    def grailsVersion = "2.2 > *"
     def title = "Ember.js Asset-Pipeline Plugin"
     def author = "David Estes"
     def authorEmail = "destes@bcap.com"
@@ -16,7 +16,4 @@ class EmberAssetPipelineGrailsPlugin {
     def issueManagement = [ system: "GITHUB", url: "http://github.com/bertramdev/ember-grails-asset-pipeline/issues" ]
     def scm = [ url: "http://github.com/bertramdev/ember-grails-asset-pipeline" ]
 
-    def doWithDynamicMethods = { ctx ->
-        HandlebarsAssetFile.processors = [EmberHandlebarsProcessor]
-    }
 }

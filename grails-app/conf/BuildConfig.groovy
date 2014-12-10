@@ -11,11 +11,14 @@ grails.project.dependency.resolution = {
 		mavenCentral()
 	}
 
+	dependencies {
+		compile 'com.bertramlabs.plugins:ember-asset-pipeline:2.0.5'
+	}
+
 	plugins {
 
 
-		runtime ":asset-pipeline:1.9.9"
-		runtime ":handlebars-asset-pipeline:1.3.0.3"
+		runtime ":asset-pipeline:2.0.13"
 
 		build ':release:3.0.0', ':rest-client-builder:1.0.3', {
 			export = false
