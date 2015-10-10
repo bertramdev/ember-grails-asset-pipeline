@@ -12,15 +12,15 @@ grails.project.dependency.resolution = {
 	}
 
 	dependencies {
-		compile 'com.bertramlabs.plugins:ember-asset-pipeline:2.0.5'
+		compile 'com.bertramlabs.plugins:ember-asset-pipeline:2.6.0'
 	}
 
 	plugins {
 
 
-		runtime ":asset-pipeline:2.0.13"
+		runtime ":asset-pipeline:2.6.0"
 
-		build ':release:3.0.0', ':rest-client-builder:1.0.3', {
+		build ':release:3.1.1', ':rest-client-builder:1.0.3', {
 			export = false
 		}
 	}
