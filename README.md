@@ -9,7 +9,7 @@ For more information on how to use asset-pipeline, visit [here](http://www.githu
 
 ```groovy
 plugins {
-	runtime ":ember-asset-pipeline:1.0.0.2"
+	runtime ":ember-asset-pipeline:2.7.0"
 }
 ```
 
@@ -28,7 +28,7 @@ grails ember-bootstrap
 ## For CoffeeScript support
 1. Add coffee-asset-pipeline to the BuildConfig
 ```groovy
-	runtime ":coffee-asset-pipeline:0.8.0"
+	runtime ":coffee-asset-pipeline:2.7.0"
 ```
 
 2. Run the bootstrap generator in step 4 with an extra flag instead:
